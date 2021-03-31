@@ -4,7 +4,7 @@ import data
 
 driver = None
 
-@pytest.fixture(scope='module') #this will be execute before and after each method
+@pytest.fixture(scope='module') #this will be execute before and after each module
 def setup():
     global driver
     PATH = "C:/Program Files (x86)/chromedriver.exe"  #path were is located the chromedriver
@@ -20,7 +20,7 @@ def setup():
     driver.find_element_by_xpath(data.buttonXPATH).click()
 
     yield driver
-    driver.close() #We will close the browser after complete the test method.
+    driver.close() #We will close the browser after complete the tests.
 
 #Validate proper notification message is showed if  Age is bigger 100
 
