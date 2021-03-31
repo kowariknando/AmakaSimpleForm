@@ -12,8 +12,8 @@ def setup():
     driver.maximize_window()
     driver.get("https://single-form.vercel.app/")
 
-    driver.find_element_by_xpath(data.nameXPATH).send_keys("Fe")
-    driver.find_element_by_xpath(data.surnameXPATH).send_keys("Kowarik")
+    driver.find_element_by_xpath(data.nameXPATH).send_keys("Fernando")
+    driver.find_element_by_xpath(data.surnameXPATH).send_keys("Thisisanamewiththirtycharacters")
     driver.find_element_by_xpath(data.phoneXPATH).send_keys("+48 881-674-440")
     driver.find_element_by_xpath(data.websiteXPATH).send_keys("https://www.google.com/")
     driver.find_element_by_xpath(data.ageXPATH).send_keys("29")
@@ -22,22 +22,22 @@ def setup():
     yield driver
     driver.close() #We will close the browser after complete the test method.
 
-def test_TC_Name_003_Name(setup):
+def test_TC_Surname_012_Name(setup):
     messageName = driver.find_element_by_xpath(data.nameMessageXPATH)
-    assert messageName.text == "There we have some errors"
+    assert messageName.text == "Everything good"
 
-def test_TC_Name_003_Surname(setup):
+def test_TC_Surname_012_Surname(setup):
     messageSurname = driver.find_element_by_xpath(data.surnameMessageXPATH)
-    assert messageSurname.text == "Everything good"
+    assert messageSurname.text == "There we have some errors"
 
-def test_TC_Name_003_Phone(setup):
+def test_TC_Surname_012_Phone(setup):
     messagePhone = driver.find_element_by_xpath(data.phoneMessageXPATH)
     assert messagePhone.text == "Everything good"
 
-def test_TC_Name_003_Website(setup):
+def test_TC_Surname_012_Website(setup):
     messageWebsite = driver.find_element_by_xpath(data.websiteMessageXPATH)
     assert messageWebsite.text == "Everything good"
 
-def test_TC_Name_003_Age(setup):
+def test_TC_Surname_012_Age(setup):
     messageAge = driver.find_element_by_xpath(data.ageMessageXPATH)
     assert messageAge.text == "Everything good"
